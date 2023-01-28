@@ -13,30 +13,68 @@ body {
     font-family:  'Questrial' , sans-serif;
 }
 
-h1,h2,h3{
+.header {
 
-    color:aliceblue;
+    flex: 0 0 100%;
+    text-align: center;
+    background-color: rgb(150, 150, 150);
+ }
+
+ .row {
+    display: flex;
+ 
+ }
+
+ .col{
+    border: 15px solid gray;
+    padding: 50px;
+    margin: 20px;
+ }
+
+div.gallery {
+margin: 5px;
+border: 1px solid #ccc;
+float: left;
+width: 180px;
+}
+
+div.gallery:hover {
+border: 1px solid #777;
+}
+
+div.gallery img {
+width: 100%;
+height: auto;
+}
+
+div.desc {
+padding: 15px;
+text-align: center;
+
 }
 
 h1{
 
     font-size: 45px;
+    text-align: center;
+    color:rgb(57, 57,57 )
+    
 }
 
 p{
-
-    font-size: 30px;
+    text-align: center;
+    font-size: 20px;
+    color:#3b4245
+    
 }
 
 h2{
 
-    color:#859398;
-    font-size: 45px;
+    text-align: center;
+    font-size: 30px;
+    color: #3b4245;
 }
 
-p{ 
-    font-size: 20px;
-}
 
 header {
         position:fixed;
@@ -52,71 +90,41 @@ header {
 
 }
 
-header h1{
-
-    text-align: center;
-}
-
-.GetToKnowMe {
-    background: #283048;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-.GetToKnowMe h2{
-    color: slategray;
-	font-size: 45px;
-    text-align: center;
-}
-
-.GetToKnowMe p1 {
-
-    font-size: 20px;
-}
-
-.GetToKnowMe p2 { 
-    
-    font-size: 20px;
-}
-
-.funfact {
-    border: double thick #323232;
-    padding: 2%;
-    box-sizing: border-box;
-    background-color: rgb(149, 164, 164);
-
-}
-
-.funfact h3{
-
-    Margin:0;
-    color: rgb(57, 57, 57);
+section::after {
+    content: normal;
+    display: table;
+    clear:both;
 }
 
 footer {
-    display: grid;
-	grid-template-columns: auto;
+    display:table-footer-group;
 	background-color: rgb(77, 83, 99);
 	color: rgb(57, 57,57 );
 	box-sizing: border-box;
 
 }
 
-footer {
+.footer {
 
     text-align: center;
     padding: 4%;
     box-sizing: border-box;
 }
 
-footer i {
-    margin: 1%;
+nav{
+    display: contents;
+    background-color: aliceblue;
+    border-color: #777;
+    box-sizing:content-box;
 }
 
-.fourColumns{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 2%;
+.nav{
 
+    text-align: left;
+    padding:4%;
+    box-sizing: border-box;
 }
+
+
+
+
