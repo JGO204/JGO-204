@@ -31,29 +31,6 @@ body {
     margin: 20px;
  }
 
- .assignments {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-gap: 10px;
-	margin-top: 10px;
-}
-
-.assignments section{
-	height: 100px;
-	background-color: #ffffff;
-	border-radius: 25px;
-	padding: 7px;
-	text-align: center;
-	position: relative;
-	
-}
-
-.assignments section p{
-	color: #000000;
-	font-size: 14px;
-
-}
-
 div.gallery {
 margin: 5px;
 border: 1px solid #ccc;
@@ -113,7 +90,11 @@ header {
 
 }
 
-
+section::after {
+    content: normal;
+    display: table;
+    clear:both;
+}
 
 footer {
     display:table-footer-group;
@@ -143,7 +124,6 @@ nav{
     padding:4%;
     box-sizing: border-box;
 }
-
 
 
 
