@@ -1,0 +1,247 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+
+}
+body{
+    margin: 0%;
+    background-color: #ffffff;
+    font-family: 'Questrial', sans-serif;
+
+}
+
+.header{
+    height: 20px;
+    width: auto;
+    background:fixed;
+    background-color:#8ed1fc;
+
+}
+
+.menuBar {
+    display:inline-flex
+    cursor: pointer; 
+} 
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+
+.topnav {
+    background-color:#0073a8; 
+    overflow: hidden;
+
+}
+
+
+
+.topnav a{
+    float: left;
+    color:aliceblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+.topnav a:hover {
+    background-color:#abb8c3;
+    color: black;
+}
+
+.topnav a.active {
+    background-color:#005075;
+    color: white;
+
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+
+body, html {
+    height: 100%;
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/Users/jaymegonzalez/Documents/EME6930 Web Programming/GitHub/JGO-204/Images/Quigz1HERO.png");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+.hero-text{
+    float:relative;
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+}
+
+.hero-text button:hover{
+    background-color:#005075
+    color: white;
+}
+
+.blue-bar{
+    background-color: #0073a8;
+    overflow: hidden;
+    font-size: x-small;
+    
+}
+
+.below-bar-left{
+    float: left;
+    width:50%;
+    padding:15px;
+
+}
+
+.below-bar-right::after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+h4 a:link{
+    color:#000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+h4 a:hover{
+    color:#0073a8;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+h4 a:visited{
+    color:rgb(0, 0, 0);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.productofferings{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.deptImages{
+    height:100px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30rem;
+}
+
+.railroads{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+    gap: 10px;
+    
+}
+
+.rrImages{
+    flex-direction: row;
+    height:100px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30rem;
+}
+
+@media (max-width:600px) {
+    .productofferings {
+        flex-direction: column;
+    }
+    .deptImages{
+        flex-direction: column;
+    }
+
+    .railroads{
+        flex-direction: column;
+    }
+
+    .rrImages{
+        flex-direction: column;
+    }
+
+}
+
+
+.icon-bar{
+    width:100%;
+    background-color: #0073a8;
+    overflow:auto;
+}
+
+.icon-bar a{
+    float:left;
+    text-align: center;
+    width: 20%;
+    padding: 12px 0;
+    transition: all 0.3 ease;
+    color:#ffffff;
+    font-size: 20px;
+ }
+
+.icon-bar a:hover {
+    background-color:#005075
+}
+
+.active {
+    background-color: #abb8c3;
+
+}
+
