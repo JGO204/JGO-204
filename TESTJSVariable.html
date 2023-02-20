@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+      h1, h3{
+         font-family: 'Caveat', cursive;
+         font-family: 'Questrial', sans-serif;
+         color:antiquewhite;
+      }
+</style>
+   
+   
+   <title> Jaymes JS Variable Example</title>
+      <script type="text/javascript">
+         
+
+      /*  declaration of variables and some variable assignment and writing to the web page*/
+         var sen_fin;
+
+         sen_fin = prompt("Finish the sentence: To the window, to the....!");
+         
+      /* this is the right answer*/
+         if (sen_fin == "wall" ) {
+            document.write("<body bgcolor='#FFA233'>");
+            document.write ('<img src = "Images/proposal2-2.jpg\" width=498 height=371>');
+            }
+
+      /*this could also be a right answer*/ 
+         else if (sen_fin == "window" ) {
+            document.write("<body bgcolor='#EDB469'>");
+            document.write('<img src = "Images/proposal3-2.jpg\" width=486 height= 394>');
+            }
+      
+      /*this is for all other text inputs*/ 
+         else {
+            document.write("<body bgcolor='#C23D10'>");
+            document.write('<img src = "Images/proposal4-2.jpg\" width=510 height=225>');
+            }
+         
+         /* this code did not work for me?!?! I wanted it to show up AFTER the last one...
+         
+         movie_name = prompt("What is the name of this movie?");
+         if (movie_name == "the proposal") {
+            document.write("<h2> You are correcto!</h2>");
+         }
+         
+         else {
+            document.write("<h2> wrong.</h2>");
+         } */ 
+</script>
+
+<script type="text/javascript">
+
+/* identification of variables*/ 
+var movie_name;
+   movie_name = prompt("What is the name of this movie?");
+         if (movie_name == "the proposal") {
+            document.write("<h2> You are correcto!</h2>");
+         }
+         
+         else {
+            document.write("<h2> wrong.</h2>");
+         }
+
+
+
+</script>
+<script>
+
+
+
+</script>
+</head>
+
+
+<body>
+<h1>What am I allergic to?</h1>
+<br>
+<h3>Pine nuts, and the full spectrum of human emotion.</h3>
+</body>
+</html>
