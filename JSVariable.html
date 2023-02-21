@@ -52,21 +52,23 @@
             }
 
 
-</script> <!--Execute 1st-->
-
-
+</script> 
 
 </head> 
 
 
 <body>
+<h2> Click to show the name of the movie!</h2>
 
-<h1>what is the name of this movie?</h1>
-<br>
-<button type = "button" onclick="playButton" class=button> click here to answer </button>
+<p id="movie"> Guess the movie in your head!</p>
 
-<script type="text/javascript"> src="wk4-name.js"</script> <!-- Execute 2nd-->
+<button type="button"
+onclick='document.getElementById("movie").innerHTML = "The Proposal"'>Click to see the answer!</button>
+
+
 </body>
+
+
 
 </html>
 
