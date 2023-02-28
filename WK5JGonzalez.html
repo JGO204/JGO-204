@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Calculating Sight Distance
+    </title>
+
+    <head>
+         <script type="text/javascript">
+             /* Function to figure out how many feet a train will travel at certain MPH in 15 second increments*/
+                
+             /*speed and time are the input variables*/
+             function HowFar (placeHolder) 
+             {
+                 var track_speed;
+                 var name;
+
+                 name=document.speed_form.fname.value + " " +  document.speed_form.lname.value;
+            
+
+                 /* In 15 seconds, moving 5mph, a train travels 110feet */
+
+                track_speed = document.speed_form.MaxAuth.value * 22;
+                track_speed = track_speed + track_speed * placeHolder;
+                
+                
+                //alert("The train will cover" + speed + "feet in 15 seconds");
+                //write it to the page
+
+                document.getElementByID("TrainMoves").innerHTML = "<h3>" + name + "," + "in 15 seconds the train will travel" + track_speed + "feet" + "</h3>";
+
+                } 
+
+        </script>
+    </head>
+    
+    <body>
+        <h2> Sight Distance Calculation </h2>
+        <p> Type in the track speed to determine how far a train will travel in 15 seconds.</p>
+        <form name="speed_form">
+        <br>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname">
+        <br>
+        <br>
+        "Enter the maximum speed for the track you are working on in increments of 5mph" <br>
+        <!-- -->
+        <!-- -->
+        <input type="number" name="MaxAuth" min="0" size="3" placeholder="0">
+        <br>
+        <input type="button" name="button" onclick="HowFar(1)" value="Click to Calculate">
+        Distance Covered: 
+        <p id="TrainMoves"> This is how many feet the train will travel in 15 seconds.</p>
+        <p id="big train">    </p>
+    </form>
+    </body>
+    
+</html>

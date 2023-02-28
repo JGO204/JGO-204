@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Calculating Sight Distance
+    </title>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            body{
+                background-color: darkgray;
+                background-image: url("Images/Watchman\ Lookout.png");
+                background-size:cover;
+                background-blend-mode:overlay;
+                background-position:center;
+                background-repeat:no-repeat;
+                
+            }
+
+            p, h2,h3 {
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            input[type=button], input[type= ClickToCalculuate]{
+                background-color: dodgerblue;
+                border:none;
+                border-radius: 5px;
+                color:white;
+                padding:16px 32px;
+                text-decoration: none;
+                margin:4px,2px;
+
+            }
+            
+            form{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .TAW {
+                border: 2px black;
+                border-radius: 5px;
+                text-align: center;
+
+            }
+            /*this is the logo for railpros but I can't get it centered idk how to make this be responsive. 
+            I wanted the logo big in the center of the gray background*/
+            .logo{
+                position:absolute;
+                bottom:200px;
+                left: 450px;
+                
+            }
+
+            /*i still don't know how to center the icons*/
+            .icon-bar{
+                position:fixed;
+                left:0;
+                bottom:0;
+                text-align:center;
+                width:100%;
+                background-color: #0073a8;
+                overflow:auto;
+            }
+
+            .icon-bar a{
+                float:left;
+                text-align: center;
+                width: 20%;
+                padding: 12px 0;
+                transition: all 0.3 ease;
+                color:#ffffff;
+                font-size: 20px;
+             }
+
+            .icon-bar a:hover {
+                background-color:#005075
+            }
+
+            
+        </style>
+
+
+
+         <script type="text/javascript">
+             /* Function to figure out how many feet a train will travel at certain MPH in 15 second increments*/
+                
+             /*speed is really the only  the input variable. the name one is
+             just there for extra personalization*/
+
+             function HowFar (feetTravelled)
+             {
+                 var track_speed;
+                 var name;
+				 
+                 name=document.speed_form.fname.value + " " +  document.speed_form.lname.value;
+            
+                 /* In 15 seconds, moving 5mph, a train travels 110feet.
+                 Knowing this, we can divide 110ft by 5mph to get 22. This number is what we
+                 multiply by the track speeds to get the right number of feet travelled. */
+
+                track_speed = document.speed_form.MaxAuth.value * 22;
+               /*track_speed = track_speed + track_speed * feetTravelled;*/
+                
+                
+                //alert("This is how many feet the train will travel" + track_speed + " in 15 seconds");
+                //write it to the page;
+
+                document.getElementById("TrainMoves").innerHTML = "<h3>" + name + ", in 15 seconds the train will travel " + track_speed + " feet.</h3>";
+
+                } 
+
+        </script>
+    </head>
+    
+    <body>
+        <!--This is the form the user will fill out to determine the sight distance -->
+        <div class="TAW">
+        <h2> Sight Distance Calculation </h2>
+        <p> Type in the track speed to determine how far a train will travel in 15 seconds.</p>
+        <form name="speed_form">
+        <br>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname">
+        <br>
+        <br>
+        Enter the maximum speed for the track you are working on in increments of 5mph. <br>
+        <!-- -->
+        <!-- -->
+        <input type="number" name="MaxAuth" min="0" size="3" placeholder="0">
+        <br><br>
+        <input type="button" name="button" onClick="HowFar()" value="Click to Calculate">
+
+        <p id="TrainMoves"> This is how many feet the train will travel in 15 seconds.</p>
+    </form>
+    </div>
+
+    <!--I'm still struggling to get this positioned right. I can't 
+    fight it any longer-->
+    <div class="logo">
+        <img src="Images/smolHands1.png">
+
+    </div>
+
+    <footer>
+        <div class="icon-bar">
+            <a class="active" href="#"><i class="fa fa-home"></i></a>
+            <a class href="#"><i class="fa fa-envelope"></i></a>
+        </div>
+
+
+    </footer>
+    
+    </body>
+    
+</html>

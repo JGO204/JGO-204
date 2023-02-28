@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<title>Sight Distance</title>
+<head>
+
+    <script type="text/javascript">
+        // Helper function to output correct version of the word
+// depending on amount
+grammarize = (amount, singular, plural) => {
+  if (typeof amount === 'number' && typeof singular === 'string' && typeof plural === 'string') {
+    return Math.abs(amount) === 1 ? singular : plural;
+  }
+  return null;
+}
+
+// Time = distance/speed
+timeCalculator = (distance, speed) => {
+  const time = distance / speed;
+
+  // Get the hour portion of the total time value
+  const hour = Math.floor(time);
+
+  // Divide total time by 1 to get decimal portion
+  // and convert to fixed string keeping 2 decimals
+  const decimal = (time % 1).toFixed(2);
+
+  // Get the readable minute value by dividing by 60
+  // and round the number
+  const minutes = Math.round(decimal * 60);
+
+  if (distance && speed) {
+    if (hour === 0) {
+      alert(
+        `${minutes} ${grammarize(
+          minutes,
+          'minute',
+          'minutes'
+        )} to your destination`
+      );
+    } else if (minutes === 0) {
+      alert(
+        `${hour} ${grammarize(
+          hour,
+          'hour',
+          'hours'
+        )} to your destination`
+      );
+    } else {
+      alert(
+        `${hour} ${grammarize(
+          hour,
+          'hour',
+          'hours'
+        )} and ${minutes} ${grammarize(
+          minutes,
+          'minute',
+          'minutes'
+        )} to your destination`
+      );
+    }
+  } 
+  
+  return false;
+};
+
+
+
+    </script>
+
+</head>
+
+<body>
+     <form onsubmit="return timeCalculator(document.getElementById('distance').value, document.getElementById('speed').value);">
+        Distance (miles):<br>
+        <input type="text" id="distance">
+        <br>
+        Speed (mph):<br>
+        <input type="text" id="speed">
+        <br><br>
+        <input type="submit" value="Calculate Time">
+      </form>
+</body>
+
+
+
+</html>
+
+
+
