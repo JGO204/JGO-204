@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Adoption Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    
+        /*  global variables: array of waiting list so far, number in waiting list. Arrays see modules 8 & 9 */
+        
+          var waitingLIst  = ["Dog, poodle, 0.5, female, glarbs@usf.edu, 813 543 6755, 343 Sandor Lane Tampa 33647, lonely"];
+          var numWaiting = 1;
+    
+        /*  
+        Assemble all the form inputs into string and put into a waiting list.
+        */
+    
+        
+        function processPetPrefs ()
+        {
+        
+            var prefs = "";
+        
+            prefs = document.adoption-form.pet-type.value + " ," + document.adoption-form.breed.value + 
+            " ," + document.adoption-form.age.value + " ," + document.adoption-form.gender.value;
+        
+            /* add it onto the array of the waiting list */
+            waitingLIst[numWaiting] = prefs;
+            numWaiting = numWaiting +1;
+        
+            document.getElementById("waitingList").innerHTML = "You are number " + numWaiting + " on the list, your prefs are: " + prefs;
+    
+        }
+        
+        
+            // Add event listener for form submission
+            
+            document.getElementById("adoption-form").addEventListener("submit", function(event) {
+                event.preventDefault(); // prevent form from submitting normally
+    
+                // Get form data
+                let formData = new FormData(event.target);
+    
+                // Display form data
+                for (let entry of formData.entries()) {
+                    console.log(entry[0] + ": " + entry[1]);
+                }
+    
+                // You can submit the form data to a server using an AJAX request or a form submission
+                // .then(response => response.json())
+                // .then(data => console.log(data))
+                // .catch(error => console.error(error));
+            });
+            
+
+        </script>
+</head>
+<body>
+    <h1>Pet Adoption Form</h1>
+
+    <form id="adoption-form" form onsubmit="processPetPrefs()">
+
+        <label for="pet-type"> Pet Type: </label>
+        <select id="pet-type" name="pet-type" required>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="rabbit">Rabbit</option>
+        </select><br>
+
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" name="breed"><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea><br>
+
+        <label for="reason">Reason for adoption:</label>
+        <textarea id="reason" name="reason" rows="3"></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    
+    <h2> Waiting list </h2>
+    <br>
+    <p id = "waitingList"> Here is where the waiting list will go. </p>
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+	
