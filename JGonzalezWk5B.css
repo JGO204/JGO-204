@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1,h2,h3{
+    font-family: 'Caveat', cursive;
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+}
+
+
+input[type=text]{
+    font-family: 'Caveat', cursive;
+    font-family: 'Questrial', sans-serif;
+}
+
+textarea{
+    font-family: 'Caveat', cursive;
+    font-family: 'Questrial', sans-serif;
+}
+
+label{
+    font-family: 'Caveat', cursive;
+    font-family: 'Questrial', sans-serif;
+}
+/*how do i change the phone of the file upload section?!*/
+input[type=file]{
+    font-family: 'Caveat', cursive;
+    font-family: 'Questrial', sans-serif;
+}
