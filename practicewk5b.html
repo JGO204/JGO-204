@@ -16,19 +16,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Questrial&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
         <script type="text/javascript">
-
-            // Responsive Top Nav
-            function myFunction() {
-             var x = document.getElementById("myTopnav");
-                if (x.className === "topnav") {
-                x.className += " responsive";
-                } else {
-                 x.className = "topnav";
-                 }
-            }
             var field = document.querySelector('#today');
             var date = new Date();
 
@@ -46,13 +36,12 @@
             function clicked (e) {
                  if (!confirm('Are You Sure?')) {
                      e.preventDefault();
-                document.write("Thank You for your submission!");
                  }
 
 
              }
              
-            /*Submission Recieval Message*/
+            /*Submission Recieval Message
             var nextStep = document.querySelector('#nextStep');
             
             nextStep.addEventListener('click', function (e) {
@@ -63,7 +52,7 @@
 
             // Show thank you message element
             document.getElementById('thank_you').style.display = 'block';
-            });
+            });*/
 
 
         </script>
@@ -72,40 +61,22 @@
 
 
     <body>
-        <div class="topnav" id="myTopnav">
-            <a href="#home" class="active">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars"></i>
-            </a>
-          </div>
-          
+    <h1>RailPros Media Request Form</h1>
+    <h2>If you have a media request, you've come to the right place!</h2>
+    <h3>Fill out the form below - please be as detailed as possible...we can't read your mind
+    <br>(but we can read this form)</h3>
 
-
-        <h1>RailPros Media Request Form</h1>
-        <h2>If you have a media request, you've come to the right place!</h2>
-        <h3>Fill out the form below - please be as detailed as possible...we can't read your mind
-        <br>(but we can read this form)</h3>
-    
-        <form action="/action_page.php"  method="GET">
-            <div class="ID">
+        <form action="mailto:gonzalez204@usf.edu"  method="GET">
+            <div class="form">
                 <label for="name">Name</label>
                 <input type="text" name= "name" id="name" required>
-            </div>
-
-            <div class="dateRequested">
+                <br>
                 <label for="today"> Date Requested</label>
                 <input type="date" name="today" id="today" required>
-            </div>
-    
-            <div class="dueDate">
+                <br>
                 <label for="due">Due Date</label>
                 <input type="date" id="due" name="due-date" required>
-            </div>
-        
-            <div class="Depts">
+                <br>
                 <label for="department">Department</label>
                 <select id ="departments" name="department" required>
                     <option value="Flagging">Flagging</option>
@@ -118,14 +89,10 @@
                     <option value="Executive">Executive</option>
                     <option value="Other">Other</option>
                 </select>
-             </div>
-
-             <div class="location">
+                <br>
                 <label for="location">Location</label>
                 <input type="text" id="location" name="location" required>
-             </div>
-
-             <div class="project">
+                <br>
                 <label for="projType">Project Type</label>
                 <select id="projType" name="projType" required>
                     <option value="eLearning">eLearning</option>
@@ -138,14 +105,11 @@
                     <option value="Brochure">Brochure</option>
                     <option value="Other">Other</option>
                 </select>
-             </div>
-
-
-             <div class="ovrView">
+                <br>
                <p><label for="overview">Overview of Project</label></p>
                <textarea id="overview" name="overview" placeholder="briefly describe your project" rows="4" cols="50" required></textarea>
              </div>
-             
+             <br>
              <div class="Files">
                 <span>Do you have reference files to upload?</span>
                 <select id="FilesUpload" onchange="ShowHideDiv()">
@@ -157,38 +121,27 @@
                 <input type="file" id="files">
                 </div>
             </div>
+            
 
-            <div class="contactEmail">
                 <label for="email">Enter your RailPros email</label>
                 <input type="email" id="email" pattern=".+@railpros\.com" size="30" required>
-            </div>
-
-            <div class="contactPhone">
+                <br>
                 <label for="phone">Enter your phone number</label>
                 <input type="tel" id="phone" name="phone" 
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-            </div>
-            
-            <div class="submit">
+                <br>
                 <input type="submit" onclick="clicked(event)">
-            </div>
-        
-            <div id="thank_you" style="display:none;"> 
+           
+            <!-- <div id="thank_you" style="display:none;"> 
             <p> We've recieved your submission. A member of the Media Team will reach out to you soon!</p>
             <button type="submit">Close</button>
-            </div>
+            </div>-->
     
 
         </form> 
-    </body>
 
-    <footer>
-        <div class="FooterBar">
-            <div class="logo">
-                <img src="Images/smolHands1.png">
-                    <div class="foot">2023 © All rights reserved.</div>
-            </div>
-        </div>
-    </footer>
+
+
+    </body>
 
     </html>
