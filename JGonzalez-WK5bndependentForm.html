@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    
+    <title> RailPros Media Team Request Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+         
+    <head>
+        <link rel="stylesheet" href="JGonzalezWk5B1css.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Questrial&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script type="text/javascript">
+
+            // Responsive Top Nav
+            function myFunction() {
+             var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                x.className += " responsive";
+                } else {
+                 x.className = "topnav";
+                 }
+            }
+
+            // form files or no files
+            function ShowHideDiv() {
+            var FilesUpload = document.getElementById("FilesUpload");
+            var dvFiles = document.getElementById("dvFiles");
+            dvFiles.style.display = FilesUpload.value == "Y" ? "block" : "none";
+             }
+
+            //Are you sure you want to submit?
+            function clicked (e) {
+                 if (!confirm('Are You Sure?')) {
+                     e.preventDefault();
+                 }
+             }
+
+            // MailTo Function
+            function MailFunction(){
+                var yourMessage = document.getElementById("overview").value
+                var subject= "Training and Media Request More Info"
+                var mail="mailto:jayme.gonzalez@railpros.com?subject="+subject+"&body="+yourMessage;
+
+                 window = window.open(mail, 'emailWindow')
+            }
+             
+            /*Submission Recieval Message*/
+            var nextStep = document.querySelector('#nextStep');
+            
+            nextStep.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Hide first view
+            document.getElementById('my_form').style.display = 'none';
+
+            // Show thank you message element
+            document.getElementById('thank_you').style.display = 'block';
+            });
+
+
+        </script>
+<!-- I'm not sure if the thank you message above works - I think it did but only when you hit cancel-->
+    </head>
+
+
+    <body>
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+          
+
+
+        <h1>RailPros Training Media Request Form</h1>
+        <h2>If you have a training or media request, you've come to the right place!</h2>
+        <h3>Fill out the form below - please be as detailed as possible...we can't read your mind
+        <br>(but we can read this form)</h3>
+
+    <!--I had everything listed as required, but it took so long to debug, so I took some things off of required-->
+        <form action="jump_to.html"  method="GET">
+            <div class="ID">
+                <label for="name">Name</label>
+                <input type="text" name= "name" id="name" required>
+            </div>
+
+            <div class="dateRequested" id="currentDate">
+                <label for="today"> Date Requested:</label>
+                <span id = "todaysDate"> </span>
+            </div>
+    
+            <div class="dueDate">
+                <label for="due">Due Date</label>
+                <input type="date" id="due" name="due-date" required>
+            </div>
+        
+            <div class="Depts">
+                <label for="department">Department</label>
+                <select id ="departments" name="department" required>
+                    <option value="Flagging">Flagging</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Safety">Safety</option>
+                    <option value="HR">HR</option>
+                    <option value="IT">IT</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Construction Observation">Construction Observation</option>
+                    <option value="Executive">Executive</option>
+                    <option value="Other">Other</option>
+                </select>
+             </div>
+
+             <div class="location">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" >
+             </div>
+
+             <div class="project">
+                <label for="projType">Project Type</label>
+                <select id="projType" name="projType" required>
+                    <option value="eLearning">eLearning</option>
+                    <option value="Instructor Led Course">Instructor Led Course</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Video">Video</option>
+                    <option value="Graphics">Graphics</option>
+                    <option value="Flyers">Flyers</option>
+                    <option value="Poster">Poster</option>
+                    <option value="Brochure">Brochure</option>
+                    <option value="Other">Other</option>
+                </select>
+             </div>
+
+
+             <div class="ovrView">
+               <p><label for="overview">Overview of Project</label></p>
+               <textarea id="overview" name="overview" placeholder="briefly describe your project" rows="4" cols="50" ></textarea>
+             </div>
+             
+             <div class="Files">
+                <span>Do you have reference files to upload?</span>
+                <select id="FilesUpload" onchange="ShowHideDiv()">
+                    <option value="N">No</option>
+                    <option value="Y">Yes</option>
+                </select>
+                <div id="dvFiles" style="display: none">
+                Upload Files:
+                <input type="file" id="files">
+                </div>
+            </div>
+
+            <div class="contactEmail">
+                <label for="email">Enter your RailPros email</label>
+                <input type="email" id="email" pattern=".+@railpros\.com" size="30" required>
+            </div>
+
+            <div class="contactPhone">
+                <label for="phone">Enter your phone number</label>
+                <input type="tel" id="phone" name="phone" 
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            </div>
+            
+            <div class="submit">
+                <input type="submit" onclick="clicked(event)">
+            </div>
+
+            <div class="mailTO">
+                <button type ="button" onClick="MailFunction()">Email for More</button> 
+            </div>
+
+<!-- I don't think this div works, but i found another solution -->
+            <div id="thank_you" style="display:none;"> 
+            <p> We've recieved your submission. A member of the Media Team will reach out to you soon!</p>
+            <button type="submit">OK</button>
+            </div>
+    
+
+        </form> 
+    </body>
+
+    <footer>
+        <div class="FooterBar">
+            <div class="logo">
+                <img src="Images/smolHands1.png">
+                    <div class="foot">© 2023 </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- this is the script for making the date non-adjustable for people who input so nothing can be backdated-->
+    <script>
+            var today_date=new Date();
+            var myyear=today_date.getFullYear();
+            var mymonth=today_date.getMonth() + 1;
+            var mytoday=today_date.getDate();
+
+            document.getElementById('todaysDate').innerHTML = mymonth + "/" + mytoday + "/" + myyear;
+
+    </script>
+
+    </html>
