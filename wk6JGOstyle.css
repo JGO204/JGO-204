@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1,h2,h3{
+    font-family: 'Caveat', cursive;
+    font-family: 'Questrial', sans-serif;
+
+}
+h1{
+    text-align: center;
+}
+
+p{
+    font-family: 'Caveat', cursive;
+    font-family: 'Questrial', sans-serif;
+}
+
+body{
+    background-color: bisque;
+}
+
+.col{
+    border: 15px solid gray;
+    padding: 50px;
+    margin: 20px;
+    text-align: center;
+ }

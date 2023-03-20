@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    
+    <title> WorkOut Finder</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <head>
+
+        <link rel="stylesheet" href="wk6JGOstyle.css" type="text/css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Questrial&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+       
+        <!-- This is defining the 4 different properties and method to display the workout info -->
+        <script>
+            var legs1 = {
+                exercise: "front squat",
+                type: "legs",
+                muscle: "quads",
+                reps: "10",
+            
+
+                describeWorkout: function()
+                {
+                    return("This movement, the " + this.exercise + "," + " trains your" + this.type + "with a focus on" + this.muscle + ". For it to be effective, do " + " " + this.reps + "reps 4 times."); 
+                }
+            };
+
+            var arms1 = {
+                exercise:"dumbbell curl",
+                type: "arms",
+                muscle: "biceps",
+                reps: "10",
+
+                describeWorkout: function()
+                {
+
+                    return("This movement, the " + this.exercise + "," + "trains your" + this.type + "with a focus on" + this.muscle + "." + " " +" For it to be effective, do " + this.reps + "reps 4 times.");
+
+                }
+            };
+
+            var abs1 = {
+                exercise: "side plank",
+                type: "abs",
+                muscle: "obliques",
+                reps: "10",
+
+                describeWorkout: function()
+                {
+
+                    return("This movement, the " + this.exercise + "," + "trains your " + this.type + "with a focus on" + this.muscle + ". For it to be effective, do " + this.reps + "reps 4 times.");
+
+                }
+            };
+        </script>
+        <!-- in the script, I can't figure out how to get the text spacing right. It's doing weird stuff between some of the variables and the text-->
+    </head>
+
+    <body>
+<!-- This is where you click on the buttons to see what to work out-->
+   
+    <h1>Whatcha Gonna Workout?</h1> 
+        <!-- This is for training legs-->
+        <div class="col">
+            <h2>Skinny legs got ya down?</h2>
+            <img src="Images/front squat.jpg" width="113" height="75" class="pic">
+            <p> click the button below to make more leg gains!</p>
+
+            <p id="Lowertraining"></p>
+            <button onClick="document.getElementById('Lowertraining').innerHTML = legs1.describeWorkout()">Legs for dayz</button>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+<!-- I couldn't figure out how to put them all in divs to get them centered with diff background colors, so this will have to do-->
+        <!-- This one is for training biceps-->
+        <div class="col">
+            <h2>Hard time picking up bags?</h2>
+            <img src="Images/curls.jpg" width="173" height="115" class="pic">
+            <p> click the button to grow your arms!</p>
+ 
+            <p id="Uppertraining"></p>
+            <button onClick="document.getElementById('Uppertraining').innerHTML = arms1.describeWorkout()"> curlz for the gurlz </button>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <!--This one is for training abs!-->
+        <div class="col">
+            <h2> Summer is right around the corner!</h2>
+            <img src="Images/side plank.jpg" width="110" height="73" class="pic">
+            <p>click the button below to get some summer ab!</p>
+
+            <p id="CoreTraining"></p>
+            <button onClick="document.getElementById('CoreTraining').innerHTML = abs1.describeWorkout()"> drabz to abz! </button>
+        </div>
+
+
+
+    </body>
+
+</html>
