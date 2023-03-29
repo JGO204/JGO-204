@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+
+        <title> Occupied Tracks </title>
+        
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <script>
+            // determining if tracks are occupied on adjacent controlled tracks
+
+            function Protection (fm) {
+                //constructor
+                
+                this.name = fm.name.value; //eic name
+                this.email = fm.email.value; // email address
+                this.machine = fm.machine.checked; // on-track equipment
+                this.worker = fm.worker.checked; // workers on ground
+                this.worker1 = fm.worker1.checked; // no workers on ground
+
+
+                // return recommendation text
+
+                this.rules = function() {
+                    // if none of the requirements are checked
+                    if (!(this.machine && this.worker && this.worker1 )) {
+                        return "The tracks are not occupied and the situation does not require the use of adjacent controlled track protection.";
+                    }
+
+                    // if there are workers on the ground with no on-track equipment
+                    if (!(this.machine && this.worker1) && (this.worker )) {
+                        return "You do not have occupied tracks and do not need to use adjacent controlled track protection";
+                    }
+
+                    // if there are no workers on the ground, but on-track equipment is being used
+
+                    if (!(this.worker) && (this.machine && this.worker1)) {
+                        return "The tracks are occupied. Please follow adjacent controlled track protection procedures";
+                    }
+
+                    // if there are workers on the ground AND on-track equipment is being used
+                    if (!(this.worker1) && (this.machine && this.worker)){
+                        return "This tracks are occupied. Please follow adjacent controlled track protection prodcedures.";
+                    }
+
+                    // if they check all the boxes
+                    if (this.worker && this.machine && this. worker){
+                        return "Retake RWP training. This is literally impossible";
+                    }
+
+                    // if they check ONLY on-track equipment
+                    if (!(this.worker && this.worker1) && this.machine){
+                        return "Please provide more information";
+                    }
+
+                    // if they check ONLY no workers on ground
+
+                    if (!(this.machine && this.worker) && this.worker1){
+                        return "Please Provide more information";
+                    }
+
+                    // if they check ONLY workers on ground
+
+                    if(!(this.machine && this.worker1) && this.worker){
+                        return "Please provide more information";
+                    }
+                  }
+                }
+
+        // global object
+
+        var protection;
+        function process_form () {
+            // get form object
+            var fm  = document.getElementById("my_form");
+            // get output object
+            var out = document.getElementById("output");
+            // display rules based on input
+            protection = new Protection(fm);
+          //  console.log("Debug:" + JSON.stringify(protection));
+       
+        
+            out.innerHTML = protection.rules();
+
+        
+        }
+            
+        </script>
+
+    </head>
+
+    <body>
+    
+    <h1> Are the tracks Occupied?!</h1>
+    <br>
+    <h2> Will you need to use Adjacent Controlled Track Protection?! </h2>
+    <br>
+    <h3> Click the boxes to see if the tracks are occupied or not!</h3>
+<div id="container">
+    <form id="my_form">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+            <label for="email"> Email </label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted"> Plz use your railpros email address.</small>
+        </div>
+
+        <div class="form-group form-check">
+            <input type = "checkbox" class="form-check-input" id="machine">
+            <label class = "form-check-label" for="machine">On-Track Equipment is being used.</label>
+        </div>
+
+        <div class="form-group form-check">
+            <input type = "checkbox" class="form-check-input" id="worker">
+            <label class="form-check-label" for="worker"> Ground workers are present </label>
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="worker1">
+            <label class="form-check-label" for="worker1"> No ground workers present</label>
+         </div>
+        
+        <br>
+         <button type="button" class=" btn btn-primary" onClick="process_form()"> Submit </button>
+        <br>
+        <div id="output">
+
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+    
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
