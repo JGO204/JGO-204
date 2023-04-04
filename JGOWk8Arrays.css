@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+
+}
+
+body {
+    margin:0%;
+    background-color: lightslategray;
+    font-family:  'Questrial' , sans-serif;
+}

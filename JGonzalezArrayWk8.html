@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Jayme Array Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+
+    <link rel="stylesheet" href="JGOWk8Arrays.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+    <script>
+        // set up global array of good dogs
+
+        var dog_names = ["Chilly", "Maggie", "Gracie", "Kokonut", "Sascha" , "Scoop"];
+
+        var dog;
+
+        // add array method here
+        // adding dog name to the beginning of the list
+
+        function GoodDog () {
+
+            dog_names.unshift(prompt("Type in your pups name to add them to the list"));
+            alert("The final list of good pups are "+ dog_names);
+
+        }
+
+        // prompt the user to enter their dogs name and see if it's in the list. 
+
+        function WhosAGoodDog() {
+
+            var newDog = prompt("Enter your dogs name to see if they're a good dog!");
+            var foundIt = false;
+            for (i = 0; i < dog_names.length; i = i + 1) {
+                if (newDog == dog_names[i]) {
+
+                    foundIt= true;
+                    alert ("Hey! We found " + newDog + " !");
+                }
+            }
+
+                if ( foundIt == false) {
+                    alert("Ugh! We did not find " + newDog + " but of course we need to add them to the list.");
+                    dog_names.push(newDog)
+                }
+        }
+
+    </script>
+
+<body>
+<!-- Obviously we are learning who the good dogs are in the class ;) -->
+    <h2> Who's a dog!</h2>
+    <br>
+    <button onclick="WhosAGoodDog()">Input your dogs name to see if they're already on the list!</button>
+    <br>
+    <br>
+    <button onclick="GoodDog()">Click here to add your pup to the list.</button>
+
+
+</body>
+
+</head>
+
+</html>
