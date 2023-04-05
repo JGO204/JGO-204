@@ -31,7 +31,7 @@
 
         }
 
-        // prompt the user to enter their dogs name and see if it's in the list. 
+        // prompt the user to enter their dogs name and see if it's in the array list. 
 
         function WhosAGoodDog() {
 
@@ -55,12 +55,40 @@
 
 <body>
 <!-- Obviously we are learning who the good dogs are in the class ;) -->
-    <h2> Who's a dog!</h2>
-    <br>
-    <button onclick="WhosAGoodDog()">Input your dogs name to see if they're already on the list!</button>
-    <br>
-    <br>
-    <button onclick="GoodDog()">Click here to add your pup to the list.</button>
+
+<div class="header">
+
+    <div>
+        <img src="Images/paws.png">
+    </div>
+
+<h1>Who's a Good Dog?!</h1>
+
+<h3><i>Everyone thinks they have the best dog. And none of them are wrong</i></h3>
+
+</div>
+
+
+    <div class="content">
+        <div class="PupTest">
+            <div>
+                <img src="Images/Chills.jpeg" width="192" height="256">
+            </div>
+
+            <button onclick="WhosAGoodDog()">Input your dogs name to see if they're already on the list!</button>
+        </div>
+  
+
+   
+        <div class="pupList">
+            <div>
+                <img src="Images/maggie.JPG" width="189" height="252">
+            </div>
+
+            <button onclick="GoodDog()">Click here to add your pup to the list.</button>
+        </div>
+    </div>
+    
 
 
 </body>

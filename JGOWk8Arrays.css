@@ -8,7 +8,48 @@ html {
 }
 
 body {
-    margin:0%;
+    margin:70px;
     background-color: lightslategray;
     font-family:  'Questrial' , sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+.content{
+    position:relative;
+    padding-left: 40%;
+    text-align: center;
+}
+
+h1{
+    font-size: 80px;
+    text-align: center;
+    
+}
+
+div{
+    text-align: center;
+
+}
+
+h3{
+    font-size: 30px;
+    text-align:center;
+
+}
+
+.PupTest{
+    
+    width:300px;
+    border: 3px solid black;
+    padding:10px;
+}
+
+.pupList {
+    
+   
+    width:300px;
+    border: 3px solid black;
+    padding:10px;
 }
