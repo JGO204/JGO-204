@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arrays and Loops JGO</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type = "text/javascript">
+
+        // this is an array of the flavors of lays potato chips and their tastiness as determined by me.
+        
+        var BestFlavors = [
+        'Classic',
+        'Dill Pickle',
+        'Salt and Vinegar',
+        'Adobadas',
+        'Artesanas',
+        'Bacon Wrapped Jalapeno Popper',
+        'Balsamic Sweet Onion',
+        'Barbecue',
+        'Beer n Brats',
+        'Beer',
+        'Big Wave Salted Egg Yolk Shrimp',
+        'Big Wave Spicy Hot Pot',
+        'Big Wave Spicy Peanut',
+        'Applewood BBQ and Smoked Cheddar',
+        'Sharp Cheddar and Jalapeno',
+        'Brazilian Picanha',
+        'Cajun Herb and Spice',
+        'California Cool Dill',
+        'Charcoal Grilled Chicken',
+        'Cheddar and Sour Cream',
+        'Cheddar Bacon Mac and Cheese',
+        'Cheddar Jalapeno',
+        'Cheese and Onion',
+        'Cheesy Garlic Bread',
+        'Cheetos Cheese',
+        'Chicken',
+        'Chicken and Waffles',
+        'Chile Limon',
+        'Chile Mango',
+        'Chipotle Ranch',
+        'French Fries',
+        
+    
+        ];
+
+
+        var WorstFlavors = [
+        'Coffee Jelly Oolong Milk Tea',
+        'Chicken',
+        'Crab Spice Seasoning',
+        'Bayberry',
+        'BBQ Rib',
+        'Beef',
+        'Beef Noodle',
+        'Cappuccino',
+        'Celebration Wagyu Steak',
+        'Cherry Blossom and Rice Wine',
+        'Cherry Tomato',
+        'Chesapeake Bay Crab Spice',
+        'Braised Pork',
+        'Creme Brulee Milk Tea',
+        'Icons Chile Relleno',
+        'Garlic Shrimp',
+        'Grilled Squid Flavor',
+        
+        ];
+
+
+    // Function to find the flavor of chip and see where it is on that list
+        function findFlavor(name, LaysArray) 
+            {
+            var len = LaysArray.length;
+            var position = -9;
+        
+                for (i = 0; i < len; i++) 
+                if (LaysArray[i] == name)
+                    position = i + 1;
+            
+                return position;
+            }
+
+
+    // Function to the position of the chip on the list of worst flavors
+
+        function findGrossFlavors(flavor)
+            {
+            var pos = findFlavor(flavor, WorstFlavors);
+            
+            if (pos == -9){
+            writeText("your chip is not on the list of yuckiest flavors", "text");
+            }
+            else {
+                writeText(flavor + " is at the " + pos + 
+                " position on the list of yuckiest chip", "text");
+            }
+
+            }
+
+    // Function to the position of the chip on the list of yummy flavors
+
+        function findDelishFlavors(flavor)
+            {
+            var pos = findFlavor(flavor, BestFlavors);
+            
+            if (pos == -9){
+            writeText("Your chip is not on the list of yummiest chips", "text");
+                }
+                else {
+                writeText(flavor + " is " + pos + " on the list of yummiest chips", "text");
+                }
+            }
+
+        // write it to writeText
+        function writeText(txt, id)
+                {  
+                document.getElementById(id).innerHTML=txt;
+                }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Best and Worst Flavors of Lays Chips.</h1>
+    <br>
+    <h3>As determined by me. Your trusted Lays Chips taste tester!</h3>
+    <br>
+    <p id="text"></p>
+    <input type="text" id="textForm" name="textForm" placeholder="Enter Chip Flavor Here" value>
+    <br>
+    <button type="button" onclick="findDelishFlavors(document.getElementById('textForm').value)"> Click to see if your fav chip flavor is on the Yummy List!</button>
+    <br>
+    <button type="button" onclick="findGrossFlavors(document.getElementById('textForm').value)"> Click to see if your fav chip is actually really yucky.</button>
+
+</body>
+
+
+
+
+
+</html>
