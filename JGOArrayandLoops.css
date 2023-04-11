@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* CSS Document */
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+
+  .column {
+    flex: 50%;
+    padding: 10px;
+    height: 510px; 
+    background-color: azure;
+  }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   
+  }
+
+body {
+    margin:0%;
+    background-color: lightslategray;
+    font-family:  'Questrial' , sans-serif;
+}
+
+.header {
+
+    flex: 0 0 100%;
+    text-align: center;
+    background-color: rgb(150, 150, 150);
+ }
+
+h1, h3 {
+    text-align: center;
+ 
+}
+
+.test {
+    text-align: center;
+}
+
