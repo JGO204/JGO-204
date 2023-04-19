@@ -28,7 +28,7 @@ function startGame(){
             // <img="0-0"> 
             let tile = document.createElement("img");
             tile.id = r.toString() + "-" + c.toString();
-            tile.src = "./ImagesFinal/" + randomPPE() + ".png";
+            tile.src = "./Images/" + randomPPE() + ".png";
 
             //DRAG FUNCTIONALITY
             tile.addEventListener("dragstart", dragStart); //click on a ppe, initialize drag process
@@ -111,9 +111,9 @@ function crushThree(){
             let ppe2 = board[r][c+1];
             let ppe3 = board[r][c+2];
             if (ppe1.src == ppe2.src && ppe2.src == ppe3.src && !ppe1.src.includes("blank")){
-                ppe1.src = "./ImagesFinal/blank.png";
-                ppe2.src = "./ImagesFinal/blank.png";
-                ppe3.src = "./ImagesFinal/blank.png";
+                ppe1.src = "./Images/blank.png";
+                ppe2.src = "./Images/blank.png";
+                ppe3.src = "./Images/blank.png";
 
             }
         }
@@ -127,9 +127,9 @@ function crushThree(){
             let ppe2 = board[r+1][c];
             let ppe3 = board[r+2][c];
             if (ppe1.src == ppe2.src && ppe2.src == ppe3.src && !ppe1.src.includes("blank")){
-                ppe1.src = "./ImagesFinal/blank.png";
-                ppe2.src = "./ImagesFinal/blank.png";
-                ppe3.src = "./ImagesFinal/blank.png";
+                ppe1.src = "./Images/blank.png";
+                ppe2.src = "./Images/blank.png";
+                ppe3.src = "./Images/blank.png";
             }
         }
     }
