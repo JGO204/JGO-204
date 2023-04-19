@@ -135,3 +135,4 @@ function crushThree(){
     }
 }
 
+// this is as far as I got this week. I still need to make them re populate and tally a score!
