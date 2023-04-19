@@ -106,7 +106,7 @@ function crushPPE(){
 function crushThree(){
     // check rows
     for (let r = 0; r < rows; r++){
-        for (let c = 0; c < columns; c++ ); {
+        for (let c = 0; c < columns-2; c++ ) {
             let ppe1 = board[r][c];
             let ppe2 = board[r][c+1];
             let ppe3 = board[r][c+2];
