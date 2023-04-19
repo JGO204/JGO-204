@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
-
+/* general style*/
 
 html {
     -ms-text-size-adjust: 100%;
@@ -28,6 +28,7 @@ body, html {
     height: 100%;
 }
 
+/*top nan*/
 *{
     box-sizing: border-box;
     padding: 0;
@@ -228,7 +229,7 @@ a {
     }
 }
 
-
+/*footer style*/
 .icon-bar{
     width:100%;
     background-color: #0073a8;
@@ -254,3 +255,6 @@ a {
     background-color: #abb8c3;
 
 }
+
+
+
