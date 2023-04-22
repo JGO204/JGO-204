@@ -14,6 +14,8 @@ window.onload = function(){
     //1/10th of a second
     window.setInterval(function(){
         crushPPE();
+        slidePPE();
+        generatePPE();
     }, 100);
 }
 
@@ -22,7 +24,7 @@ function randomPPE(){
 }
 
 function startGame(){
-    for (let r = 0; r < rows; r++){
+    for (let r = 0; r < rows; r++) {
         let row = [];
         for (let c= 0; c < columns; c++){
             // <img="0-0"> 
@@ -71,6 +73,10 @@ function dragDrop(){
 
 function dragEnd(){
 
+    if(currTile.src.includes("blank") || otherTile.src.includes("blank")){
+        return;
+    }
+
     let currCoords = currTile.id.split("-"); // id="0=0" - > ["0","0"]
     let r = parseInt(currCoords[0]);
     let c = parseInt(currCoords[1]);
@@ -87,19 +93,26 @@ function dragEnd(){
 
     let isAdjacent = moveLeft || moveRight || moveUp || moveDown;
 
-
-
     if (isAdjacent) {
         let currImg = currTile.src;
         let otherImg = otherTile.src;
         currTile.src = otherImg;
         otherTile.src = currImg;
+
+        let validMove = checkValid();
+        if (!validMove){
+            let currImg = currTile.src;
+            let otherImg = otherTile.src;
+            currTile.src = otherImg;
+            otherTile.src = currImg;
+        }
     }
 }
 
 function crushPPE(){
     
     crushThree();
+    document.getElementById("score").innerText = score;
 
 }
 
@@ -114,6 +127,7 @@ function crushThree(){
                 ppe1.src = "./Images/blank.png";
                 ppe2.src = "./Images/blank.png";
                 ppe3.src = "./Images/blank.png";
+                score += 30;
 
             }
         }
@@ -130,9 +144,62 @@ function crushThree(){
                 ppe1.src = "./Images/blank.png";
                 ppe2.src = "./Images/blank.png";
                 ppe3.src = "./Images/blank.png";
+                score += 30;
             }
         }
     }
 }
 
-// this is as far as I got this week. I still need to make them re populate and tally a score!
+function checkValid() {
+    //check rows
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns-2; c++) {
+            let ppe1 = board[r][c];
+            let ppe2 = board[r][c+1];
+            let ppe3 = board[r][c+2];
+            if (ppe1.src == ppe2.src && ppe2.src == ppe3.src && !ppe1.src.includes("blank")) {
+                return true;
+                }
+            }
+        }
+    
+        //check columns
+        for (let c = 0; c < columns; c++) {
+            for (let r = 0; r < rows-2; r++) {
+                let ppe1 = board[r][c];
+                let ppe2 = board[r+1][c];
+                let ppe3 = board[r+2][c];
+                if (ppe1.src == ppe2.src && ppe2.src == ppe3.src && !ppe1.src.includes("blank")) {
+                    return true;
+                }
+            }
+        }
+    
+        return false;
+    }
+
+    function slidePPE(){
+        for (let c = 0; c < columns; c++) {
+            let ind = rows - 1;
+            for (let r = columns-1; r >= 0; r--){
+                if (!board[r][c].src.includes("blank")){
+                    board[ind][c].src = board [r][c].src;
+                    ind -=1;
+                }
+            }
+
+            for (let r = ind; r >=0; r--){
+                board[r][c].src = "./Images/blank.png";
+            }
+        }
+    }
+            
+
+    function generatePPE() {
+        for (let c = 0; c < columns; c++) {
+            if (board[0][c].src.includes("blank")){
+                board[0][c].src = "./Images/" + randomPPE() + ".png";
+            }
+        }
+    }
+    
