@@ -15,6 +15,12 @@ body{
 
 }
 
+h2{
+    text-align: center;
+    display: flex;
+
+}
+
 .header{
     height: 20px;
     text-align: center;
@@ -28,7 +34,21 @@ body, html {
     height: 100%;
 }
 
-/*top nan*/
+ .col{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; 
+ }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+/*top nav*/
 *{
     box-sizing: border-box;
     padding: 0;
@@ -144,6 +164,11 @@ a {
 
 /* tablet menu*/
 @media all and (min-width:700px){
+
+    .column {
+        width: 100%;
+    } 
+
     .menu {
         justify-content: center;
     }
@@ -163,6 +188,7 @@ a {
         text-align: right;
         order: 2;
     }
+
 /* Button up from tablet screen */
     .menu li.button a {
         padding: 10px 15px;
@@ -186,7 +212,8 @@ a {
      background:#abb8c3;
      border-color:white;
     }
-}
+
+
 
 /*Desktop Menu*/
 
@@ -227,6 +254,9 @@ a {
     .submenu-active{
         border-radius: 0;
     }
+
+    .column {
+        width: 100%;
 }
 
 /*footer style*/
@@ -248,13 +278,9 @@ a {
  }
 
 .icon-bar a:hover {
-    background-color:#005075
+    background-color:#005075;
 }
 
 .active {
     background-color: #abb8c3;
-
 }
-
-
-
