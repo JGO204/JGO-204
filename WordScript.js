@@ -5,6 +5,8 @@ wrongLetter = document.querySelector(".wrong-letter span"),
 resetBtn = document.querySelector(".reset-btn"),
 typingInput = document.querySelector(".typing-input");
 let word, maxGuesses, incorrectLetters = [], correctLetters = [];
+
+// function to call the word
 function randomWord() {
     let ranItem = wordList[Math.floor(Math.random() * wordList.length)];
     word = ranItem.word;
@@ -19,6 +21,8 @@ function randomWord() {
         inputs.innerHTML = html;
     }
 }
+
+// check for matching
 randomWord();
 function initGame(e) {
     let key = e.target.value.toLowerCase();
@@ -50,6 +54,8 @@ function initGame(e) {
         }
     }, 100);
 }
+
+// resets the board for next word
 resetBtn.addEventListener("click", randomWord);
 typingInput.addEventListener("input", initGame);
 inputs.addEventListener("click", () => typingInput.focus());

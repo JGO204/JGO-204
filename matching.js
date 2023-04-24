@@ -110,7 +110,7 @@ function dragEnd(){
         }
     }
 }
-
+// crushes ppe when there are 3 in a row
 function crushPPE(){
     
     crushThree();
