@@ -50,7 +50,7 @@ let wordList = [
     },
 
     {
-        word: "roadwayWorker",
+        word: "roadwayworker",
         hint: "RWW"
     },
 
