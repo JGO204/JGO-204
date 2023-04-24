@@ -5,7 +5,7 @@ let wordList = [
     },
 
     {
-        word: "ontrackSafety",
+        word: "ontracksafety",
         hint: "OTS"
     },
 
