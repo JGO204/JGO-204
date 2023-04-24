@@ -6,7 +6,7 @@ resetBtn = document.querySelector(".reset-btn"),
 typingInput = document.querySelector(".typing-input");
 let word, maxGuesses, incorrectLetters = [], correctLetters = [];
 
-// function to call the word
+// function to call the word and set the max number of guesses
 function randomWord() {
     let ranItem = wordList[Math.floor(Math.random() * wordList.length)];
     word = ranItem.word;
